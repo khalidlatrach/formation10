@@ -10,9 +10,9 @@
         Ceci est un {{machineName}} est  -- status {{getStatus()}}</H4>
     <input type="text" [(ngModel)]="machineName">
 
-   <button (click)="onSwitch()" *ngIf="machineStatus ==='Allumé'"> Eteindre </button>
+   <button (click)="onSwitch()" *ngIf="machineStatus ==='Allumé'">Eteindre</button>
    
-   <button (click)="onSwitch()" *ngIf="machineStatus ==='Eteint'"> Allumer </button>
+   <button (click)="onSwitch()" *ngIf="machineStatus ==='Eteint'">Allumer</button>
 
 
     

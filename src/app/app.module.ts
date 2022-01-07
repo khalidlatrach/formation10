@@ -9,16 +9,28 @@ import { MachineComponent } from './machine/machine.component';
 
 import {FormsModule} from '@angular/forms';
 import { MachineService } from './services/machine.service';
+import { AuthComponent } from './auth/auth.component';
+import { MachineViewComponent } from './machine-view/machine-view.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'machines' , component: MachineViewComponent},
+  { path: 'auth' , component: AuthComponent},
+  { path: '' , component: MachineViewComponent},
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    MachineComponent
+    MachineComponent,
+    AuthComponent,
+    MachineViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     MachineService
