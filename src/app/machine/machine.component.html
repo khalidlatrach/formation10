@@ -1,0 +1,19 @@
+<li>
+
+    <div style="width: 20px; height: 20px; background-color: red;" 
+    *ngIf="machineStatus==='Eteint'" ></div>
+    
+    <div style="width: 20px; height: 20px; background-color: green;" 
+    *ngIf="machineStatus==='Allumé'" ></div>
+
+    <H4 [ngStyle]="{color: getColor()} ">
+        Ceci est un {{machineName}} est  -- status {{getStatus()}}</H4>
+    <input type="text" [(ngModel)]="machineName">
+
+   <button (click)="onSwitch()" *ngIf="machineStatus ==='Allumé'"> Eteindre </button>
+   
+   <button (click)="onSwitch()" *ngIf="machineStatus ==='Eteint'"> Allumer </button>
+
+
+    
+</li>

@@ -1,0 +1,15 @@
+<h2>Mes appareils</h2>
+<p>Mise à jour : {{lastUpdate | date: 'dd/M/yyyy'}}</p>
+<ul>
+  <app-machine *ngFor="let machine of machines, let i = index" 
+                      [machineName]="machine.name" 
+                      [machineStatus]="machine.status"
+                      [index]="i"
+                      ></app-machine>
+
+</ul>
+<button [disabled]="!isAuth" (click)="onAllumer()">Tout allumer</button>
+
+<button class="btn btn-danger"
+[disabled]="!isAuth"
+(click)="onEteindre()"> Tout éteindre </button>
