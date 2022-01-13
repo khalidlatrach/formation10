@@ -12,6 +12,9 @@ import { MachineService } from './services/machine.service';
 import { AuthComponent } from './auth/auth.component';
 import { MachineViewComponent } from './machine-view/machine-view.component';
 import { RouterModule, Routes } from '@angular/router';
+import { SingleMachineComponent } from './single-machine/single-machine.component';
+import { AuthService } from './services/auth.service';
+import { EditeMachineComponentComponent } from './edite-machine-component/edite-machine-component.component';
 
 const appRoutes: Routes = [
   { path: 'machines' , component: MachineViewComponent},
@@ -24,7 +27,9 @@ const appRoutes: Routes = [
     AppComponent,
     MachineComponent,
     AuthComponent,
-    MachineViewComponent
+    MachineViewComponent,
+    SingleMachineComponent,
+    EditeMachineComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    MachineService
+    MachineService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
