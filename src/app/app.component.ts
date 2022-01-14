@@ -1,7 +1,9 @@
 import { formatDate } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MachineService } from './services/machine.service';
-import { Subscription, Observable, interval } from 'rxjs';
+import { Subscription, Observable, interval} from 'rxjs';
+
+
 
 @Component({
   selector: 'app-root',
@@ -9,10 +11,21 @@ import { Subscription, Observable, interval } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
- 
-  constructor(private machineService: MachineService) { }
-  ngOnInit() {
- 
-  };
+
+
+constructor(private machineService : MachineService){}
+  ngOnInit(){
+  // this.machines = this.machineService.machines;
+     
+        
+  // });  
+  }
+
+  data$ = new Observable(observer =>{
+    observer.next(1);
+    observer.next(2);
+    observer.next(3);
+    observer.complete();});
+
 
 }

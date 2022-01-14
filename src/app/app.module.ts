@@ -19,8 +19,10 @@ import { EditeMachineComponentComponent } from './edite-machine-component/edite-
 const appRoutes: Routes = [
   { path: 'machines' , component: MachineViewComponent},
   { path: 'auth' , component: AuthComponent},
+  { path: 'edit' , component: EditeMachineComponentComponent},
   { path: '' , component: MachineViewComponent},
 ];
+
 
 @NgModule({
   declarations: [
